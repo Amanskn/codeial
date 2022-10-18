@@ -3,6 +3,11 @@ const app=express();
 // default port:- 80 for http and 443 for https
 const port=5000;
 
+// use express router
+app.use("/",require("./routes"))
+
+
+
 
 app.listen(port,function(err){
     if(err){
