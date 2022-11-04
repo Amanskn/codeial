@@ -6,7 +6,15 @@ const port=5000;
 // this is to require the layout library
 const expressLayouts=require('express-ejs-layouts');
 
+
+
+// setting up static files access
+app.use(express.static('./assets'));
+
 app.use(expressLayouts);
+// extract style and scripts from sub pages into the layout
+app.set('layout extractStyles',true);
+app.set('layout extractScripts',true);
 
 // use express router
 app.use("/",require("./routes"))
