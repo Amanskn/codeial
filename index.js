@@ -6,6 +6,8 @@ const port=5000;
 // this is to require the layout library
 const expressLayouts=require('express-ejs-layouts');
 
+const db=require('./config/mongoose');
+
 
 
 // setting up static files access
