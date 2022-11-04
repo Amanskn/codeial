@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>
+            <%=title%>
+        </title>
+    </head>
+    <body>
+         <!-- this is a way to implement partials  --> 
+       <%- include('_header'); -%>
+       
+       <!--This is the way to include the variable part  -->
+       <%- body%>
+
+        <!-- this is a way to implement partials -->
+        <%- include('_footer'); %>
+    </body>
+</html>

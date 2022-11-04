@@ -3,6 +3,11 @@ const app=express();
 // default port:- 80 for http and 443 for https
 const port=5000;
 
+// this is to require the layout library
+const expressLayouts=require('express-ejs-layouts');
+
+app.use(expressLayouts);
+
 // use express router
 app.use("/",require("./routes"))
 
