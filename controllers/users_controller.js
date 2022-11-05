@@ -52,10 +52,10 @@ module.exports.create=function(req,res){
             return res.redirect('back');
 
         }
-    })
+    });
 }
 
 // validating the sign in details by creating a session
 module.exports.createSession=function(req,res){
-    // TODO later
+    return res.redirect('/');
 }
