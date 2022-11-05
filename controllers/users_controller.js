@@ -10,3 +10,18 @@ module.exports.profile=function(req,res){
 module.exports.education=function(req,res){
     return res.end("<h1><i>This is the education page</i></h1>");
 }
+
+
+// setting action for signUp
+module.exports.signUp=function(req,res){
+    return res.render('user_sign_up',{
+        title:"Codeial | Sign Up"
+    })
+}
+
+// setting action for signIn
+module.exports.signIn=function(req,res){
+    return res.render('user_sign_in',{
+        title:"Codeial | Sign In"
+    })
+}
