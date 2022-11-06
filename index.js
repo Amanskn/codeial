@@ -14,6 +14,13 @@ const session=require("express-session");
 const passport=require('passport');
 const passportLocal=require('./config/passport-local-strategy');
 
+
+// This is the older version of code
+// const MongoStore=require('connect-mongo')(session);
+
+// This is newer version of code
+const MongoStore=require('connect-mongo');
+
 app.use(express.urlencoded());
 app.use(cookieParser());
 
@@ -31,7 +38,7 @@ app.set('layout extractScripts',true);
 app.set("view engine","ejs");
 app.set("views","./views");
 
-
+// mongo store is used to store the session cookie in the db
 app.use(session({
     name:'codeial',
     // TODO change the secret before deployment in production mode
@@ -40,7 +47,27 @@ app.use(session({
     resave: false,
     cookie:{
         maxAge: (1000 * 60 * 100)
-    }
+    },
+
+    // This is the older version of code
+    // store: new MongoStore(
+    //     {
+    //         mongooseConnection:db,
+    //         autoRemove:'disabled'
+    //     },
+    //     function(err){
+    //         console.log( err || 'connect-mongodb setup ok');
+    //     }
+    // ) 
+
+    // This is the newer version of code
+    store: MongoStore.create({
+      
+        mongoUrl : "mongodb://0.0.0.0:27017/social_media",
+         autoremove : "disabled",
+     },function(err){
+         console.log("error at mongo store",err || "connection established to store cookie");
+     })
 }));
 
 app.use(passport.initialize());
