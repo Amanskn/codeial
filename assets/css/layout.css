@@ -1,4 +1,6 @@
-body{
-    text-align: center;
-    background-color: aqua;
-}
+body {
+  text-align: center;
+  background-color: grey; }
+  body #layout-main {
+    color: orange;
+    height: 100%; }

@@ -5,6 +5,10 @@
         </title>
         
         <link rel="stylesheet" href="/css/layout.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+
+
         <%- style -%>
         
     </head>
@@ -12,8 +16,11 @@
          <!-- this is a way to implement partials  --> 
        <%- include('_header'); -%>
        
-       <!--This is the way to include the variable part  -->
-       <%- body%>
+       
+        <main id="layout-main">
+            <!--This is the way to include the variable part  -->
+            <%- body%>
+        </main>
 
         <!-- this is a way to implement partials -->
         <%- include('_footer'); %>
